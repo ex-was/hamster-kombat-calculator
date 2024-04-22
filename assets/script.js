@@ -217,11 +217,11 @@ const boot = () => {
                     <div class="opinions">
 						<div>
 							<label>Cost</label>
-							<input type="number" name="cost" value="${cost}" onchange="update();calculate()" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\\..*)\\./g, '$1');" />
+							<input type="number" name="cost" value="${cost}" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 						<div>
 							<label>Profit per hour</label>
-							<input type="number" name="profit" value="${profit}" onchange="update();calculate()" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\\..*)\\./g, '$1');" />
+							<input type="number" name="profit" value="${profit}" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 					</div>
                 </div>`
