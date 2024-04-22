@@ -1,167 +1,167 @@
 const config = {
 	markets: {
 		name: 'Markets',
-		items: [
-			{
+		items: {
+			fan: {
 				name: 'Fan tokens',
 				value: 0
 			},
-			{
+			btc: {
 				name: 'BTC Pairs',
 				value: 0
 			},
-			{
+			eth: {
 				name: 'ETH Pairs',
 				value: 0
 			},
-			{
+			cmc: {
 				name: 'Top 10 cmc pairs',
 				value: 0
 			},
-			{
+			gamefi: {
 				name: 'GameFi tokens',
 				value: 0
 			},
-			{
+			defi20: {
 				name: 'Defi2.0 tokens',
 				value: 0
 			},
-			{
+			socialfi: {
 				name: 'SocialFi tokens',
 				value: 0
 			},
-			{
+			meme: {
 				name: 'Meme coins',
 				value: 0
 			},
-			{
+			shit: {
 				name: 'Shit coins',
 				value: 0
 			}
-		]
+		}
 	},
 	pr: {
 		name: 'PR&Team',
-		items: [
-			{
+		items: {
+			support: {
 				name: 'Support team',
 				value: 0
 			},
-			{
+			hb: {
 				name: 'HamsterBooks',
 				value: 0
 			},
-			{
+			x: {
 				name: 'X',
 				value: 0
 			},
-			{
+			cointelegraph: {
 				name: 'Cointelegraph',
 				value: 0
 			},
-			{
+			ht: {
 				name: 'HamsterTube',
 				value: 0
 			},
-			{
+			hg: {
 				name: 'HamsterGram',
 				value: 0
 			},
-			{
+			tiktok: {
 				name: 'TikTok',
 				value: 0
 			},
-			{
+			coindesk: {
 				name: 'Coindesk',
 				value: 0
 			},
-			{
+			influencers: {
 				name: 'Influencers',
 				value: 0
 			},
-			{
+			ceo: {
 				name: 'CEO',
 				value: 0
 			},
-			{
+			it: {
 				name: 'IT team',
 				value: 0
 			},
-			{
+			marketing: {
 				name: 'Marketing',
 				value: 0
 			},
-			{
+			partnership: {
 				name: 'Partnership program',
 				value: 0
 			},
-			{
+			pt: {
 				name: 'Product team',
 				value: 0
 			},
-			{
+			bigdev: {
 				name: 'BigDev team',
 				value: 0
 			}
-		]
+		}
 	},
 	legal: {
 		name: 'Legal',
-		items: [
-			{
+		items: {
+			kyc: {
 				name: 'KYC',
 				value: 0
 			},
-			{
+			kyb: {
 				name: 'KYB',
 				value: 0
 			},
-			{
+			legal: {
 				name: 'Legal opinion',
 				value: 0
 			},
-			{
+			sec: {
 				name: 'SEC transparency',
 				value: 0
 			},
-			{
+			aml: {
 				name: 'Anti money loundering',
 				value: 0
 			},
-			{
+			luae: {
 				name: 'License UAE',
 				value: 0
 			},
-			{
+			leu: {
 				name: 'License Europe',
 				value: 0
 			},
-			{
+			lasia: {
 				name: 'License Asia',
 				value: 0
 			},
-			{
+			lsa: {
 				name: 'License South America',
 				value: 0
 			},
-			{
+			lau: {
 				name: 'License Australia',
 				value: 0
 			},
-			{
+			lna: {
 				name: 'License North America',
 				value: 0
-			},
-		]
+			}
+		}
 	},
 	specials: {
 		name: 'Specials',
-		items: [
-			{
+		items: {
+			t49: {
 				name: 'Token2049',
 				is_active: Date.now() / 1000 < 1713960000
 			},
-			{
+			tonusdt: {
 				name: 'USDT on TON',
 				config: {
 					start: {
@@ -174,7 +174,7 @@ const config = {
 					}
 				}
 			}
-		]
+		}
 	}
 };
 
@@ -235,16 +235,15 @@ const update = () => {
 		saved[element.dataset.key] = {};
 
 		element.querySelectorAll('.items .item').forEach((el) => {
-			const key = Number(el.dataset.key);
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
 
-			saved[element.dataset.key][key] = [cost, profit];
+			saved[element.dataset.key][el.dataset.key] = [cost, profit];
 		});
 	});
 
 	dump.value = JSON.stringify(saved);
-	localStorage.setItem('dump', dump.value);
+	store();
 };
 
 const calculate = () => {
@@ -255,10 +254,10 @@ const calculate = () => {
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
 
-			if(!best || best.value < profit / cost) {
+			if((!best || best.value < profit / cost) && cost > 0 && profit > 0) {
 				best = {
-					category: config[element.dataset.key].name,
-					item: config[element.dataset.key].items[el.dataset.key].name,
+					category: element.dataset.key,
+					item: el.dataset.key,
 					value: profit > 0 ? profit / cost : 0,
 					cost, profit
 				};
@@ -266,7 +265,15 @@ const calculate = () => {
 		});
 	});
 
-	document.querySelector('.results').innerText = best.cost > 0 ? `Best choice - ${best.item} in ${best.category} (${formatter.format(best.profit)} per hour for ${formatter.format(best.cost)})` : `Best choice - ${best.item} in ${best.category}`;
+	if(best && best.cost > 0) {
+		document.querySelector('.results').innerText = `Best choice - ${config[best.category].items[best.item].name} in ${config[best.category].name} (${formatter.format(best.profit)} per hour for ${formatter.format(best.cost)})`;
+		document.querySelector('.calculator .categories .category .items .item.best')?.classList?.remove('best');
+		document.querySelector(`.calculator .categories .category[data-key="${best.category}"] .items .item[data-key="${best.item}"]`).classList.add('best');
+
+		return;
+	}
+
+	document.querySelector('.results').innerText = `Fill data before start`;
 };
 
 const fill = () => {
@@ -279,9 +286,24 @@ const fill = () => {
 		});
 	});
 
-	localStorage.setItem('dump', dump.value);
-
+	store();
 	calculate();
+}
+
+const store = () => {
+	if(!dump.value.length) {
+		localStorage.removeItem('dump');
+		return;
+	}
+
+	try {
+		if(Object.prototype.toString.call(JSON.parse(dump.value)) === '[object Object]') {
+			localStorage.setItem('dump', dump.value);
+		}
+	}
+	catch(e) {
+		console.error(e.message);
+	}
 }
 
 document.addEventListener('DOMContentLoaded', boot);
