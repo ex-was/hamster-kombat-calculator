@@ -6,6 +6,10 @@ const config = {
 				name: 'Fan tokens',
 				value: 0
 			},
+			staking: {
+				name: 'Staking',
+				value: 0
+			},
 			btc: {
 				name: 'BTC Pairs',
 				value: 0
@@ -265,7 +269,7 @@ const calculate = () => {
 		});
 	});
 
-	if(best && best.cost > 0) {
+	if(best) {
 		document.querySelector('.results').innerText = `Best choice - ${config[best.category].items[best.item].name} in ${config[best.category].name} (${formatter.format(best.profit)} per hour for ${formatter.format(best.cost)})`;
 		document.querySelector('.calculator .categories .category .items .item.best')?.classList?.remove('best');
 		document.querySelector(`.calculator .categories .category[data-key="${best.category}"] .items .item[data-key="${best.item}"]`).classList.add('best');
