@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Maison Neue";
+    src: url("fonts/2173dceabf0710a335c0bca178efc162.eot");
+    src: url("fonts/2173dceabf0710a335c0bca178efc162.eot?#iefix")format("embedded-opentype"),
+    url("fonts/2173dceabf0710a335c0bca178efc162.woff2")format("woff2"),
+    url("fonts/2173dceabf0710a335c0bca178efc162.woff")format("woff"),
+    url("fonts/2173dceabf0710a335c0bca178efc162.ttf")format("truetype"),
+    url("fonts/2173dceabf0710a335c0bca178efc162.svg#Maison Neue")format("svg");
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+html {
+    background-color: #1b1f26;
+    color: #fff;
+    font-family: "Maison Neue", serif;
+}
+
+header {
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header .name {
+    font-size: 48px;
+}
+
+header .subname {
+    font-size: 18px;
+}
+
+.results {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 42px;
+}
+
+.calculator {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+.calculator .categories {
+    width: 100%;
+}
+
+.calculator .categories .category {
+    margin-bottom: 25px;
+}
+
+.calculator .categories .category > .name {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.calculator .categories .category .items {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.calculator .categories .category .items .item {
+    flex: 1 0 14%;
+    max-width: 14%;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(76, 83, 80, 0.15);
+    border-radius: 20px;
+}
+
+.calculator .categories .category .items .item .name {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.calculator .categories .category .items .item .opinions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.calculator .categories .category .items .item .opinions > div {
+    margin: 0 5px;
+}
+
+.calculator .categories .category .items .item .opinions > div input {
+    width: 90px;
+}
+
+.calculator .categories .category .items .item .opinions > div label {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+}
