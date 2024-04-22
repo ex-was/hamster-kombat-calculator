@@ -179,16 +179,8 @@ const config = {
 };
 
 const formatter = Intl.NumberFormat('en', { notation: 'compact' });
-
-/*const template = {
-	category: document.createElement('template'),
-	item: document.createElement('template')
-};
-
-template.category.innerHTML = `<div class="category" data-key><div class="name"></div><div class="items"></div></div>`;
-template.item.innerHTML = `<div class="item" data-key><div class="name"></div><div class="value"></div><div class="level"><input type="number" value /></div></div>`;*/
-
 const dump = document.querySelector('textarea[name="dump"]');
+
 dump.value = localStorage.getItem('dump')?.length ? localStorage.getItem('dump') : '';
 
 const boot = () => {
@@ -243,20 +235,14 @@ const update = () => {
 		saved[element.dataset.key] = {};
 
 		element.querySelectorAll('.items .item').forEach((el) => {
-			//const count = Number(el.querySelector('.level input').value);
 			const key = Number(el.dataset.key);
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
 
 			saved[element.dataset.key][key] = [cost, profit];
-
-			/*el.querySelector('.value').innerHTML = String(
-				//count * config[element.dataset.key].items[Number(el.dataset.key)]
-			);*/
 		});
 	});
 
-	//localStorage.setItem('saved', JSON.stringify(saved));
 	dump.value = JSON.stringify(saved);
 	localStorage.setItem('dump', dump.value);
 };
@@ -292,6 +278,8 @@ const fill = () => {
 			el.querySelector('[name="profit"]').value = element.dataset.key in saved && el.dataset.key in saved[element.dataset.key] ? saved[element.dataset.key][el.dataset.key][1] : 0;
 		});
 	});
+
+	localStorage.setItem('dump', dump.value);
 
 	calculate();
 }
