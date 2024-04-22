@@ -159,7 +159,7 @@ const config = {
 		items: [
 			{
 				name: 'Token2049',
-				value: 0
+				is_active: Date.now() / 1000 < 1713960000
 			},
 			{
 				name: 'USDT on TON',
@@ -189,6 +189,7 @@ template.category.innerHTML = `<div class="category" data-key><div class="name">
 template.item.innerHTML = `<div class="item" data-key><div class="name"></div><div class="value"></div><div class="level"><input type="number" value /></div></div>`;*/
 
 const dump = document.querySelector('textarea[name="dump"]');
+dump.value = localStorage.getItem('dump')?.length ? localStorage.getItem('dump') : '';
 
 const boot = () => {
 	//const saved = localStorage.getItem('config')?.length ? JSON.parse(localStorage.getItem('config')) : {};
@@ -205,6 +206,11 @@ const boot = () => {
 
 		for(const k in config[key].items) {
 			const i = config[key].items[k];
+
+			if('is_active' in i && !i.is_active) {
+				continue;
+			}
+
 			const cost = key in saved && k in saved[key] ? saved[key][k][0] : 0;
 			const profit = key in saved && k in saved[key] ? saved[key][k][1] : 0;
 
@@ -252,6 +258,7 @@ const update = () => {
 
 	//localStorage.setItem('saved', JSON.stringify(saved));
 	dump.value = JSON.stringify(saved);
+	localStorage.setItem('dump', dump.value);
 };
 
 const calculate = () => {
@@ -259,7 +266,6 @@ const calculate = () => {
 
 	document.querySelectorAll('.calculator .categories .category').forEach((element) => {
 		element.querySelectorAll('.items .item').forEach((el) => {
-			const key = Number(el.dataset.key);
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
 
