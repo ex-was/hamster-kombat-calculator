@@ -161,10 +161,10 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
-			t49: {
+			/*t49: {
 				name: 'Token2049',
 				is_active: Date.now() / 1000 < 1713960000
-			},
+			},*/
 			tonusdt: {
 				name: 'USDT on TON',
 				config: {
@@ -188,39 +188,36 @@ const dump = document.querySelector('textarea[name="dump"]');
 dump.value = localStorage.getItem('dump')?.length ? localStorage.getItem('dump') : '';
 
 const boot = () => {
-	//const saved = localStorage.getItem('config')?.length ? JSON.parse(localStorage.getItem('config')) : {};
 	const saved = dump.value.length ? JSON.parse(dump.value) : {};
 
 	for(const key in config) {
-		const template = document.createElement('template');
+		const $template = document.createElement('template');
 
-		template.innerHTML = `<div class="category" data-key><div class="name"></div><div class="items"></div></div>`;
-		template.content.querySelector('.category').dataset.key = key;
-		template.content.querySelector('.name').innerText = config[key].name;
+		$template.innerHTML = `<div class="category" data-key><div class="name"></div><div class="items"></div></div>`;
+		$template.content.querySelector('.category').dataset.key = key;
+		$template.content.querySelector('.name').innerText = config[key].name;
 
-		document.querySelector('.calculator .categories').append(template.content);
+		document.querySelector('.calculator .categories').append($template.content);
+
+		const $items = document.querySelector(`.categories .category[data-key="${key}"] .items`);
 
 		for(const k in config[key].items) {
 			const i = config[key].items[k];
 
-			if('is_active' in i && !i.is_active) {
-				continue;
-			}
-
 			const cost = key in saved && k in saved[key] ? saved[key][k][0] : 0;
 			const profit = key in saved && k in saved[key] ? saved[key][k][1] : 0;
 
-			document.querySelector(`.categories .category[data-key="${key}"] .items`).insertAdjacentHTML(
+			$items.insertAdjacentHTML(
 				'beforeend',
 				`<div class="item" data-key="${k}">
                     <div class="name">${i.name}</div>
                     <div class="opinions">
 						<div>
-							<label>Cost</label>
+							<label>Upgrade cost</label>
 							<input type="number" name="cost" value="${cost}" onkeyup="update();calculate()" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 						<div>
-							<label>Profit per hour</label>
+							<label>Profit/hour</label>
 							<input type="number" name="profit" value="${profit}" onkeyup="update();calculate()" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 					</div>
@@ -239,10 +236,9 @@ const update = () => {
 		saved[element.dataset.key] = {};
 
 		element.querySelectorAll('.items .item').forEach((el) => {
-			const cost = Number(el.querySelector('[name="cost"]').value);
-			const profit = Number(el.querySelector('[name="profit"]').value);
-
-			saved[element.dataset.key][el.dataset.key] = [cost, profit];
+			saved[element.dataset.key][el.dataset.key] = [
+				Number(el.querySelector('[name="cost"]').value || 0), Number(el.querySelector('[name="profit"]').value || 0)
+			];
 		});
 	});
 
