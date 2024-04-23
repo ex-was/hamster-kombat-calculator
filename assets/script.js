@@ -217,11 +217,11 @@ const boot = () => {
                     <div class="opinions">
 						<div>
 							<label>Cost</label>
-							<input type="number" name="cost" value="${cost}" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
+							<input type="number" name="cost" value="${cost}" onkeydown="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 						<div>
 							<label>Profit per hour</label>
-							<input type="number" name="profit" value="${profit}" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
+							<input type="number" name="profit" value="${profit}" onkeydown="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 					</div>
                 </div>`
@@ -270,7 +270,7 @@ const calculate = () => {
 	});
 
 	if(best) {
-		document.querySelector('.results').innerText = `Best choice - ${config[best.category].items[best.item].name} in ${config[best.category].name} (${formatter.format(best.profit)} per hour for ${formatter.format(best.cost)})`;
+		document.querySelector('.results').innerText = `${config[best.category].items[best.item].name} in ${config[best.category].name} (${formatter.format(best.profit)} per hour for ${formatter.format(best.cost)})`;
 		document.querySelector('.calculator .categories .category .items .item.best')?.classList?.remove('best');
 		document.querySelector(`.calculator .categories .category[data-key="${best.category}"] .items .item[data-key="${best.item}"]`).classList.add('best');
 
