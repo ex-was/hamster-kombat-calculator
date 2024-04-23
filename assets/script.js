@@ -217,11 +217,11 @@ const boot = () => {
                     <div class="opinions">
 						<div>
 							<label>Cost</label>
-							<input type="number" name="cost" value="${cost}" onkeydown="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
+							<input type="number" name="cost" value="${cost}" onkeydown="update();calculate()" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 						<div>
 							<label>Profit per hour</label>
-							<input type="number" name="profit" value="${profit}" onkeydown="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
+							<input type="number" name="profit" value="${profit}" onkeydown="update();calculate()" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 					</div>
                 </div>`
