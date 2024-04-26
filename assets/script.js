@@ -41,6 +41,12 @@ const config = {
 			shit: {
 				name: 'Shit coins',
 				value: 0
+			},
+			x10: {
+				name: 'Margin trading x10'
+			},
+			x20: {
+				name: 'Margin trading x20'
 			}
 		}
 	},
