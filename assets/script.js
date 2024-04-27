@@ -47,6 +47,12 @@ const config = {
 			},
 			x20: {
 				name: 'Margin trading x20'
+			},
+			x30: {
+				name: 'Margin trading x30'
+			},
+			x50: {
+				name: 'Margin trading x50'
 			}
 		}
 	},
