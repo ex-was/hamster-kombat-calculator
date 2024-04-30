@@ -53,6 +53,18 @@ const config = {
 			},
 			x50: {
 				name: 'Margin trading x50'
+			},
+			derivatives: {
+				name: 'Derivatives'
+			},
+			pmarkets: {
+				name: 'Prediction markets'
+			},
+			web3: {
+				name: 'Web3 integration'
+			},
+			dao: {
+				name: 'DAO'
 			}
 		}
 	},
@@ -116,7 +128,7 @@ const config = {
 				value: 0
 			},
 			bigdev: {
-				name: 'BigDev team',
+				name: 'BisDev team',
 				value: 0
 			}
 		}
