@@ -203,7 +203,10 @@ const config = {
 				}
 			},
 			bogdanoff: {
-				name: 'Bogdanoff is calling',
+				name: 'Bogdanoff is calling'
+			},
+			appscl: {
+				name: 'Apps Center Listing'
 			}
 		}
 	}
