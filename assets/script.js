@@ -201,6 +201,9 @@ const config = {
 						profit: 6.99
 					}
 				}
+			},
+			bogdanoff: {
+				name: 'Bogdanoff is calling',
 			}
 		}
 	}
