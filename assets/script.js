@@ -210,6 +210,9 @@ const config = {
 			},
 			villa: {
 				name: 'Villa for the DEV team'
+			},
+			long: {
+				name: 'Long squeeze'
 			}
 		}
 	}
