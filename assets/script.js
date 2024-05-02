@@ -207,6 +207,9 @@ const config = {
 			},
 			appscl: {
 				name: 'Apps Center Listing'
+			},
+			villa: {
+				name: 'Villa for the DEV team'
 			}
 		}
 	}
