@@ -130,6 +130,12 @@ const config = {
 			bigdev: {
 				name: 'BisDev team',
 				value: 0
+			},
+			f2a: {
+				name: 'Two factor authentication'
+			},
+			uxui: {
+				name: 'UX and UI team'
 			}
 		}
 	},
