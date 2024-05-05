@@ -136,6 +136,9 @@ const config = {
 			},
 			uxui: {
 				name: 'UX and UI team'
+			},
+			security: {
+				name: 'Security team',
 			}
 		}
 	},
