@@ -139,6 +139,9 @@ const config = {
 			},
 			security: {
 				name: 'Security team',
+			},
+			qa: {
+				name: 'QA team'
 			}
 		}
 	},
