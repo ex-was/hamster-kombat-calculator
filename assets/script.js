@@ -145,6 +145,9 @@ const config = {
 			},
 			shield: {
 				name: 'Antihacking shield',
+			},
+			risk: {
+				name: 'Risk management team'
 			}
 		}
 	},
