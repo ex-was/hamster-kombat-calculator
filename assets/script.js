@@ -142,6 +142,9 @@ const config = {
 			},
 			qa: {
 				name: 'QA team'
+			},
+			shield: {
+				name: 'Antihacking shield',
 			}
 		}
 	},
