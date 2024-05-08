@@ -148,6 +148,12 @@ const config = {
 			},
 			risk: {
 				name: 'Risk management team'
+			},
+			audit: {
+				name: 'Security Audition'
+			},
+			txban: {
+				name: 'Anonymous transactions ban'
 			}
 		}
 	},
