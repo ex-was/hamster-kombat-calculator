@@ -237,6 +237,9 @@ const config = {
 			},
 			long: {
 				name: 'Long squeeze'
+			},
+			short: {
+				name: 'Short squeeze',
 			}
 		}
 	}
