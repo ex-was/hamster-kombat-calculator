@@ -154,6 +154,9 @@ const config = {
 			},
 			txban: {
 				name: 'Anonymous transactions ban'
+			},
+			block: {
+				name: 'Blocking suspicious accounts'
 			}
 		}
 	},
@@ -240,9 +243,6 @@ const config = {
 			},
 			short: {
 				name: 'Short squeeze',
-			},
-			block: {
-				name: 'Blocking suspicious accounts'
 			}
 		}
 	}
