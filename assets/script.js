@@ -243,6 +243,12 @@ const config = {
 			},
 			short: {
 				name: 'Short squeeze',
+			},
+			adc: {
+				name: 'Ad contract with football club'
+			},
+			conference: {
+				name: 'Special Hamster Conference'
 			}
 		}
 	}
