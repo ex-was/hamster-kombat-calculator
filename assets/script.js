@@ -240,6 +240,9 @@ const config = {
 			},
 			short: {
 				name: 'Short squeeze',
+			},
+			block: {
+				name: 'Blocking suspicious accounts'
 			}
 		}
 	}
