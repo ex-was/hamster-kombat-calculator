@@ -249,6 +249,9 @@ const config = {
 			},
 			conference: {
 				name: 'Special Hamster Conference'
+			},
+			twochairs: {
+				name: 'There are two chairs...'
 			}
 		}
 	}
