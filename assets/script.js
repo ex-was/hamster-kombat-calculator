@@ -255,6 +255,9 @@ const config = {
 			},
 			twochairs: {
 				name: 'There are two chairs...'
+			},
+			venom: {
+				name: 'Venom Blockchain',
 			}
 		}
 	}
