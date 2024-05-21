@@ -71,6 +71,12 @@ const config = {
 			},
 			dao: {
 				name: 'DAO'
+			},
+			p2p: {
+				name: 'P2P trading'
+			},
+			bots: {
+				name: 'Trading bots'
 			}
 		}
 	},
@@ -212,6 +218,9 @@ const config = {
 			lna: {
 				name: 'License North America',
 				value: 0
+			},
+			ln: {
+				name: 'License Nigeria'
 			}
 		}
 	},
@@ -261,6 +270,12 @@ const config = {
 			},
 			venom: {
 				name: 'Venom Blockchain',
+			},
+			top10: {
+				name: 'Top 10 Global Ranking'
+			},
+			nftl: {
+				name: 'NFT Collection Launch'
 			}
 		}
 	}
