@@ -169,6 +169,21 @@ const config = {
 			},
 			block: {
 				name: 'Blocking suspicious accounts'
+			},
+			tokenomics: {
+				name: 'Tokenomics expert'
+			},
+			exppass: {
+				name: 'Consensus Explorer pass'
+			},
+			vc: {
+				name: 'VS labs'
+			},
+			officer: {
+				name: 'Compliance officer'
+			},
+			wmas: {
+				name: 'Welcome to Amsterdam'
 			}
 		}
 	},
@@ -221,28 +236,20 @@ const config = {
 			},
 			ln: {
 				name: 'License Nigeria'
+			},
+			ljp: {
+				name: 'License Japan'
+			},
+			leth: {
+				name: 'License Ethiopia'
 			}
 		}
 	},
 	specials: {
 		name: 'Specials',
 		items: {
-			/*t49: {
-				name: 'Token2049',
-				is_active: Date.now() / 1000 < 1713960000
-			},*/
 			tonusdt: {
-				name: 'USDT on TON',
-				config: {
-					start: {
-						cost: 10000,
-						profit: 1350
-					},
-					modifier: {
-						cost: 0,
-						profit: 6.99
-					}
-				}
+				name: 'USDT on TON'
 			},
 			bogdanoff: {
 				name: 'Bogdanoff is calling'
@@ -276,6 +283,33 @@ const config = {
 			},
 			nftl: {
 				name: 'NFT Collection Launch'
+			},
+			tonham: {
+				name: 'TON + Hamster Kombat = Success'
+			},
+			piranha: {
+				name: 'Consensus Piranha Pass'
+			},
+			web3a: {
+				name: 'Web3 academy launch'
+			},
+			ytbutton: {
+				name: 'YouTube Gold Button'
+			},
+			ytchannel: {
+				name: 'Hamster YouTube Channel'
+			},
+			dshow: {
+				name: 'Hamster daily show'
+			},
+			ceosgz: {
+				name: '21.000.000 CEOs'
+			},
+			pizza: {
+				name: 'Bitcoin Pizza Day'
+			},
+			ai: {
+				name: 'Hamster AI'
 			}
 		}
 	}
