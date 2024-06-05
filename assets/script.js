@@ -88,7 +88,7 @@ const config = {
 				value: 0
 			},
 			hb: {
-				name: 'HamsterBooks',
+				name: 'HamsterBook',
 				value: 0
 			},
 			x: {
@@ -275,9 +275,9 @@ const config = {
 			twochairs: {
 				name: 'There are two chairs...'
 			},
-			venom: {
+			/*venom: {
 				name: 'Venom Blockchain',
-			},
+			},*/
 			top10: {
 				name: 'Top 10 Global Ranking'
 			},
@@ -299,18 +299,18 @@ const config = {
 			ytchannel: {
 				name: 'Hamster YouTube Channel'
 			},
-			dshow: {
+			/*dshow: {
 				name: 'Hamster daily show'
-			},
-			ceosgz: {
+			},*/
+			/*ceosgz: {
 				name: '21.000.000 CEOs'
-			},
+			},*/
 			pizza: {
 				name: 'Bitcoin Pizza Day'
 			},
-			ai: {
+			/*ai: {
 				name: 'Hamster AI'
-			}
+			}*/
 		}
 	}
 };
@@ -380,15 +380,22 @@ const update = () => {
 };
 
 const calculate = () => {
-	let best;
+	const best = {
+		first: null,
+		second: null,
+		third: null
+	};
 
 	document.querySelectorAll('.calculator .categories .category').forEach((element) => {
 		element.querySelectorAll('.items .item').forEach((el) => {
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
 
-			if((!best || best.value < profit / cost) && cost > 0 && profit > 0) {
-				best = {
+			if((!best.first || best.first.value < profit / cost) && cost > 0 && profit > 0) {
+				best.third = best.second;
+				best.second = best.first;
+
+				best.first = {
 					category: element.dataset.key,
 					item: el.dataset.key,
 					value: profit > 0 ? profit / cost : 0,
@@ -398,10 +405,26 @@ const calculate = () => {
 		});
 	});
 
-	if(best) {
-		document.querySelector('.results').innerText = `${config[best.category].items[best.item].name} in ${config[best.category].name} (${formatter.format(best.profit)} per hour for ${formatter.format(best.cost)})`;
-		document.querySelector('.calculator .categories .category .items .item.best')?.classList?.remove('best');
-		document.querySelector(`.calculator .categories .category[data-key="${best.category}"] .items .item[data-key="${best.item}"]`).classList.add('best');
+	if(best.first) {
+		document.querySelectorAll('.calculator .categories .category .items .item.best').forEach((el) => el.classList.remove('best'));
+
+		const text = [];
+
+		/*document.querySelector('.results').innerText = Object.values(best)
+			.filter((value) => value !== null)
+			.map((value) => `${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)})`)
+			.join(' or ');*/
+
+		for(const [key, value] of Object.entries(best)) {
+			if(value !== null) {
+				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)})</div>`);
+				document.querySelector(`.calculator .categories .category[data-key="${value.category}"] .items .item[data-key="${value.item}"]`).classList.add('best');
+			}
+		}
+
+		document.querySelector('.results').innerHTML = text.join('\n');
+
+		//document.querySelector(`.calculator .categories .category[data-key="${best.category}"] .items .item[data-key="${best.item}"]`).classList.add('best');
 
 		return;
 	}
