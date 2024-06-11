@@ -132,6 +132,20 @@ header .subname {
     margin-bottom: 5px;
 }
 
+.calculator .categories .category .items .item .daily {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.calculator .categories .category .items .item .daily > span {
+    cursor: pointer;
+}
+
+.calculator .categories .category .items .item.daily .daily {
+    color: red;
+}
+
 textarea {
     width: 100%;
     padding: 10px;

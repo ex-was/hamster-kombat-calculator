@@ -311,6 +311,12 @@ const config = {
 			/*ai: {
 				name: 'Hamster AI'
 			}*/
+			merch: {
+				name: 'Hamster Kombat Merch'
+			},
+			premarket: {
+				name: 'Premarket Launch'
+			}
 		}
 	}
 };
@@ -322,6 +328,7 @@ dump.value = localStorage.getItem('dump')?.length ? localStorage.getItem('dump')
 
 const boot = () => {
 	const saved = dump.value.length ? JSON.parse(dump.value) : {};
+	const daily = localStorage.getItem('daily')?.length ? JSON.parse(localStorage.getItem('daily')) : [];
 
 	for(const key in config) {
 		const $template = document.createElement('template');
@@ -336,13 +343,14 @@ const boot = () => {
 
 		for(const k in config[key].items) {
 			const i = config[key].items[k];
+			const isDaily = daily.findIndex((item) => item[0] === key && item[1] === k) > -1;
 
 			const cost = key in saved && k in saved[key] ? saved[key][k][0] : 0;
 			const profit = key in saved && k in saved[key] ? saved[key][k][1] : 0;
 
 			$items.insertAdjacentHTML(
 				'beforeend',
-				`<div class="item" data-key="${k}">
+				`<div class="item${isDaily ? ' daily' : ''}" data-key="${k}">
                     <div class="name">${i.name}</div>
                     <div class="opinions">
 						<div>
@@ -354,6 +362,9 @@ const boot = () => {
 							<input type="number" name="profit" value="${profit}" onkeyup="update();calculate()" onchange="update();calculate()" pattern="[0-9]*" inputmode="numeric" />
 						</div>
 					</div>
+					<!--div class="daily">
+						<span onclick="markAsDaily(this);">${isDaily ? 'is not' : 'is'} daily</span>
+					</div-->
                 </div>`
 			);
 		}
@@ -386,10 +397,31 @@ const calculate = () => {
 		third: null
 	};
 
+	const daily = {
+		isBetter: false,
+		saved: !localStorage.getItem('daily')?.length
+			? []
+			: JSON.parse(localStorage.getItem('daily')).map((item) => {
+				return {
+					category: item[0],
+					item: item[1],
+					cost: 0,
+					profit: 0
+				};
+			}),
+	};
+
 	document.querySelectorAll('.calculator .categories .category').forEach((element) => {
 		element.querySelectorAll('.items .item').forEach((el) => {
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
+
+			const dailyIndex = daily.saved.findIndex((item) => item.category === element.dataset.key && item.item === el.dataset.key);
+
+			if(dailyIndex > -1) {
+				daily.saved[dailyIndex].cost = cost;
+				daily.saved[dailyIndex].profit = profit;
+			}
 
 			if((!best.first || best.first.value < profit / cost) && cost > 0 && profit > 0) {
 				best.third = best.second;
@@ -406,14 +438,29 @@ const calculate = () => {
 	});
 
 	if(best.first) {
+		/*if(daily.saved.length === 3) {
+			const dailyTotal = daily.saved.reduce((value, item) => {
+				return item.profit + value;
+			}, 0) / (daily.saved.reduce((value, item) => {
+				return item.cost + value;
+			}, 0) - 5_000_000);
+
+			const bestTotal = Object.values(best).reduce((value, item) => {
+				return item.value + value;
+			}, 0);
+
+			daily.isBetter = dailyTotal > bestTotal;
+
+			if(daily.isBetter) {
+				[best.first, best.second, best.third] = daily.saved;
+			}
+		}*/
+
+		console.log(daily);
+
 		document.querySelectorAll('.calculator .categories .category .items .item.best').forEach((el) => el.classList.remove('best'));
 
 		const text = [];
-
-		/*document.querySelector('.results').innerText = Object.values(best)
-			.filter((value) => value !== null)
-			.map((value) => `${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)})`)
-			.join(' or ');*/
 
 		for(const [key, value] of Object.entries(best)) {
 			if(value !== null) {
@@ -423,8 +470,6 @@ const calculate = () => {
 		}
 
 		document.querySelector('.results').innerHTML = text.join('\n');
-
-		//document.querySelector(`.calculator .categories .category[data-key="${best.category}"] .items .item[data-key="${best.item}"]`).classList.add('best');
 
 		return;
 	}
@@ -461,5 +506,44 @@ const store = () => {
 		console.error(e.message);
 	}
 }
+
+const markAsDaily = (element) => {
+	let cached = localStorage.getItem('daily')?.length ? JSON.parse(localStorage.getItem('daily')) : [];
+
+	const keys = [
+		element.parentElement.parentElement.parentElement.parentElement.dataset.key, element.parentElement.parentElement.dataset.key
+	];
+
+	const index = cached.findIndex((item) => item[0] === keys[0] && item[1] === keys[1]);
+
+	if(index > -1) {
+		delete cached[index];
+		cached = cached.filter(Boolean);
+
+		document.querySelector(`.calculator .categories .category[data-key="${keys[0]}"] .items .item[data-key="${keys[1]}"]`).classList.remove('daily');
+		document.querySelector(`.calculator .categories .category[data-key="${keys[0]}"] .items .item[data-key="${keys[1]}"] .daily > span`).innerText = 'is daily';
+	}
+	else {
+		document.querySelectorAll('.calculator .categories .category .items .item.daily').forEach((el) => el.classList.remove('daily'));
+
+		if(cached.length >= 3) {
+			const first = cached.shift();
+
+			document.querySelector(`.calculator .categories .category[data-key="${first[0]}"] .items .item[data-key="${first[1]}"]`).classList.remove('daily');
+			document.querySelector(`.calculator .categories .category[data-key="${first[0]}"] .items .item[data-key="${first[1]}"] .daily > span`).innerText = 'is daily';
+		}
+
+		cached.push(keys);
+
+		cached.forEach((item) => {
+			document.querySelector(`.calculator .categories .category[data-key="${item[0]}"] .items .item[data-key="${item[1]}"]`).classList.add('daily');
+			document.querySelector(`.calculator .categories .category[data-key="${item[0]}"] .items .item[data-key="${item[1]}"] .daily > span`).innerText = 'is not daily';
+		});
+	}
+
+	localStorage.setItem('daily', JSON.stringify(cached));
+
+	calculate();
+};
 
 document.addEventListener('DOMContentLoaded', boot);
