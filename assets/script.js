@@ -454,9 +454,9 @@ const calculate = () => {
 			if(daily.isBetter) {
 				[best.first, best.second, best.third] = daily.saved;
 			}
-		}*/
+		}
 
-		console.log(daily);
+		console.log(daily);*/
 
 		document.querySelectorAll('.calculator .categories .category .items .item.best').forEach((el) => el.classList.remove('best'));
 
