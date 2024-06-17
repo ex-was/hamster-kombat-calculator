@@ -242,6 +242,9 @@ const config = {
 			},
 			leth: {
 				name: 'License Ethiopia'
+			},
+			lindia: {
+				name: 'License India'
 			}
 		}
 	},
