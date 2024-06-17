@@ -467,7 +467,7 @@ const calculate = () => {
 
 		for(const [key, value] of Object.entries(best)) {
 			if(value !== null) {
-				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)})</div>`);
+				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)}) (coef. ${roundToFirstNumber(value.value)})</div>`);
 				document.querySelector(`.calculator .categories .category[data-key="${value.category}"] .items .item[data-key="${value.item}"]`).classList.add('best');
 			}
 		}
@@ -547,6 +547,19 @@ const markAsDaily = (element) => {
 	localStorage.setItem('daily', JSON.stringify(cached));
 
 	calculate();
+};
+
+const roundToFirstNumber = (number) => {
+
+	for(let i = 1; i <= number.toString().length; i++) {
+		const str = number.toString().substring(0, i);
+
+		if(!str.endsWith('.') && !str.endsWith('0')) {
+			return str;
+		}
+	}
+
+	return number.toString();
 };
 
 document.addEventListener('DOMContentLoaded', boot);
