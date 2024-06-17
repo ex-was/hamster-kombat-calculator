@@ -400,7 +400,9 @@ const calculate = () => {
 		third: null
 	};
 
-	const daily = {
+	const keys = Object.keys(best);
+
+	/*const daily = {
 		isBetter: false,
 		saved: !localStorage.getItem('daily')?.length
 			? []
@@ -412,21 +414,21 @@ const calculate = () => {
 					profit: 0
 				};
 			}),
-	};
+	};*/
 
 	document.querySelectorAll('.calculator .categories .category').forEach((element) => {
 		element.querySelectorAll('.items .item').forEach((el) => {
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
 
-			const dailyIndex = daily.saved.findIndex((item) => item.category === element.dataset.key && item.item === el.dataset.key);
+			/*const dailyIndex = daily.saved.findIndex((item) => item.category === element.dataset.key && item.item === el.dataset.key);
 
 			if(dailyIndex > -1) {
 				daily.saved[dailyIndex].cost = cost;
 				daily.saved[dailyIndex].profit = profit;
-			}
+			}*/
 
-			if((!best.first || best.first.value < profit / cost) && cost > 0 && profit > 0) {
+			/*if((!best.first || best.first.value < profit / cost) && cost > 0 && profit > 0) {
 				best.third = best.second;
 				best.second = best.first;
 
@@ -436,9 +438,30 @@ const calculate = () => {
 					value: profit > 0 ? profit / cost : 0,
 					cost, profit
 				};
+			}*/
+
+			for(let i = 0; i < keys.length; i++) {
+				const key = keys[i];
+
+				if((!best[key] || best[key].value < profit / cost) && cost > 0 && profit > 0) {
+					for(let l = keys.length - 1; l > i + 1; l--) {
+						best[keys[l]] = best[keys[l - 1]];
+					}
+
+					best[key] = {
+						category: element.dataset.key,
+						item: el.dataset.key,
+						value: profit > 0 ? profit / cost : 0,
+						cost, profit
+					};
+
+					break;
+				}
 			}
 		});
 	});
+
+	console.log(best);
 
 	if(best.first) {
 		/*if(daily.saved.length === 3) {
@@ -467,7 +490,7 @@ const calculate = () => {
 
 		for(const [key, value] of Object.entries(best)) {
 			if(value !== null) {
-				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)}) (coef. ${roundToFirstNumber(value.value)})</div>`);
+				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)}) (${roundToFirstNumber(value.value)} per coin)</div>`);
 				document.querySelector(`.calculator .categories .category[data-key="${value.category}"] .items .item[data-key="${value.item}"]`).classList.add('best');
 			}
 		}
