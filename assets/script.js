@@ -245,6 +245,9 @@ const config = {
 			},
 			lindia: {
 				name: 'License India'
+			},
+			lbangladesh: {
+				name: 'License Bangladesh'
 			}
 		}
 	},
@@ -490,11 +493,7 @@ const calculate = () => {
 
 		for(const [key, value] of Object.entries(best)) {
 			if(value !== null) {
-				//c=100 — b/a*100
-
-				const percent = Math.round(value.value / total * 100);
-
-				console.log(percent, value);
+				const percent = Math.round(value.value / total * 10000) / 100;
 
 				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)}) - ${percent}%</div>`);
 				document.querySelector(`.calculator .categories .category[data-key="${value.category}"] .items .item[data-key="${value.item}"]`).classList.add('best');
