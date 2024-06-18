@@ -405,6 +405,8 @@ const calculate = () => {
 
 	const keys = Object.keys(best);
 
+	let total = 0;
+
 	/*const daily = {
 		isBetter: false,
 		saved: !localStorage.getItem('daily')?.length
@@ -451,11 +453,14 @@ const calculate = () => {
 						best[keys[l]] = best[keys[l - 1]];
 					}
 
+					const value = profit > 0 ? profit / cost : 0;
+
+					total += value;
+
 					best[key] = {
 						category: element.dataset.key,
 						item: el.dataset.key,
-						value: profit > 0 ? profit / cost : 0,
-						cost, profit
+						value, cost, profit
 					};
 
 					break;
@@ -488,7 +493,7 @@ const calculate = () => {
 
 		document.querySelectorAll('.calculator .categories .category .items .item.best').forEach((el) => el.classList.remove('best'));
 
-		const total = Object.values(best).reduce((value, item) => value + (item?.value || 0), 0);
+		//const total = Object.values(best).reduce((value, item) => value + (item?.value || 0), 0);
 		const text = [];
 
 		for(const [key, value] of Object.entries(best)) {
