@@ -357,7 +357,7 @@ const boot = () => {
 			$items.insertAdjacentHTML(
 				'beforeend',
 				`<div class="item${isDaily ? ' daily' : ''}" data-key="${k}">
-                    <div class="name">${i.name}</div>
+                    <div class="name">${i.name}<span></span></div>
                     <div class="opinions">
 						<div>
 							<label>Upgrade cost</label>
@@ -425,6 +425,9 @@ const calculate = () => {
 		element.querySelectorAll('.items .item').forEach((el) => {
 			const cost = Number(el.querySelector('[name="cost"]').value);
 			const profit = Number(el.querySelector('[name="profit"]').value);
+			const value = profit > 0 ? profit / cost : 0;
+
+			total += value;
 
 			/*const dailyIndex = daily.saved.findIndex((item) => item.category === element.dataset.key && item.item === el.dataset.key);
 
@@ -449,13 +452,9 @@ const calculate = () => {
 				const key = keys[i];
 
 				if((!best[key] || best[key].value < profit / cost) && cost > 0 && profit > 0) {
-					for(let l = keys.length - 1; l > i + 1; l--) {
+					/*for(let l = keys.length - 1; l > i + 1; l--) {
 						best[keys[l]] = best[keys[l - 1]];
-					}
-
-					const value = profit > 0 ? profit / cost : 0;
-
-					total += value;
+					}*/
 
 					best[key] = {
 						category: element.dataset.key,
@@ -490,10 +489,19 @@ const calculate = () => {
 
 		console.log(daily);*/
 
+		document.querySelectorAll('.calculator .categories .category').forEach((element) => {
+			element.querySelectorAll('.items .item').forEach((el) => {
+				if(el.classList.contains('best')) {
+					el.classList.remove('best');
+				}
 
-		document.querySelectorAll('.calculator .categories .category .items .item.best').forEach((el) => el.classList.remove('best'));
+				const profit = Number(el.querySelector('[name="profit"]').value);
+				const value = profit > 0 ? profit / Number(el.querySelector('[name="cost"]').value) : 0;
 
-		//const total = Object.values(best).reduce((value, item) => value + (item?.value || 0), 0);
+				el.querySelector('.name > span').innerText = `${Math.round(value / total * 10000) / 100}%`;
+			});
+		});
+
 		const text = [];
 
 		for(const [key, value] of Object.entries(best)) {

@@ -106,8 +106,14 @@ header .subname {
 
 .calculator .categories .category .items .item .name {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
+}
+
+.calculator .categories .category .items .item .name > span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .calculator .categories .category .items .item .opinions {
