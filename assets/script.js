@@ -406,6 +406,7 @@ const calculate = () => {
 		third: null
 	};
 
+	let items = [];
 	const keys = Object.keys(best);
 
 	let total = 0;
@@ -451,6 +452,12 @@ const calculate = () => {
 				};
 			}*/
 
+			items.push({
+				category: element.dataset.key,
+				item: el.dataset.key,
+				value, cost, profit
+			});
+
 			for(let i = 0; i < keys.length; i++) {
 				const key = keys[i];
 
@@ -471,27 +478,9 @@ const calculate = () => {
 		});
 	});
 
-	if(best.first) {
-		/*if(daily.saved.length === 3) {
-			const dailyTotal = daily.saved.reduce((value, item) => {
-				return item.profit + value;
-			}, 0) / (daily.saved.reduce((value, item) => {
-				return item.cost + value;
-			}, 0) - 5_000_000);
+	items = items.sort((a, b) => a.value - b.value).reverse();
 
-			const bestTotal = Object.values(best).reduce((value, item) => {
-				return item.value + value;
-			}, 0);
-
-			daily.isBetter = dailyTotal > bestTotal;
-
-			if(daily.isBetter) {
-				[best.first, best.second, best.third] = daily.saved;
-			}
-		}
-
-		console.log(daily);*/
-
+	if(items.length >= 3) {
 		document.querySelectorAll('.calculator .categories .category').forEach((element) => {
 			element.querySelectorAll('.items .item').forEach((el) => {
 				if(el.classList.contains('best')) {
@@ -507,13 +496,12 @@ const calculate = () => {
 
 		const text = [];
 
-		for(const [key, value] of Object.entries(best)) {
-			if(value !== null) {
-				const percent = Math.round(value.value / total * 10000) / 100;
+		for(let i = 0; i < 3; i++) {
+			const value = items[i];
+			const percent = Math.round(value.value / total * 10000) / 100;
 
-				text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)}) - ${percent}%</div>`);
-				document.querySelector(`.calculator .categories .category[data-key="${value.category}"] .items .item[data-key="${value.item}"]`).classList.add('best');
-			}
+			text.push(`<div>${config[value.category].items[value.item].name} in ${config[value.category].name} (${formatter.format(value.profit)} per hour for ${formatter.format(value.cost)}) - ${percent}%</div>`);
+			document.querySelector(`.calculator .categories .category[data-key="${value.category}"] .items .item[data-key="${value.item}"]`).classList.add('best');
 		}
 
 		document.querySelector('.results').innerHTML = text.join('\n');
