@@ -248,6 +248,9 @@ const config = {
 			},
 			lbangladesh: {
 				name: 'License Bangladesh'
+			},
+			lind: {
+				name: 'License Indonesia'
 			}
 		}
 	},
