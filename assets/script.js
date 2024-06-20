@@ -77,6 +77,9 @@ const config = {
 			},
 			bots: {
 				name: 'Trading bots'
+			},
+			lzlisting: {
+				name: 'LayerZero listing'
 			}
 		}
 	},
@@ -400,30 +403,8 @@ const update = () => {
 };
 
 const calculate = () => {
-	const best = {
-		first: null,
-		second: null,
-		third: null
-	};
-
 	let items = [];
-	const keys = Object.keys(best);
-
 	let total = 0;
-
-	/*const daily = {
-		isBetter: false,
-		saved: !localStorage.getItem('daily')?.length
-			? []
-			: JSON.parse(localStorage.getItem('daily')).map((item) => {
-				return {
-					category: item[0],
-					item: item[1],
-					cost: 0,
-					profit: 0
-				};
-			}),
-	};*/
 
 	document.querySelectorAll('.calculator .categories .category').forEach((element) => {
 		element.querySelectorAll('.items .item').forEach((el) => {
@@ -433,48 +414,11 @@ const calculate = () => {
 
 			total += value;
 
-			/*const dailyIndex = daily.saved.findIndex((item) => item.category === element.dataset.key && item.item === el.dataset.key);
-
-			if(dailyIndex > -1) {
-				daily.saved[dailyIndex].cost = cost;
-				daily.saved[dailyIndex].profit = profit;
-			}*/
-
-			/*if((!best.first || best.first.value < profit / cost) && cost > 0 && profit > 0) {
-				best.third = best.second;
-				best.second = best.first;
-
-				best.first = {
-					category: element.dataset.key,
-					item: el.dataset.key,
-					value: profit > 0 ? profit / cost : 0,
-					cost, profit
-				};
-			}*/
-
 			items.push({
 				category: element.dataset.key,
 				item: el.dataset.key,
 				value, cost, profit
 			});
-
-			for(let i = 0; i < keys.length; i++) {
-				const key = keys[i];
-
-				if((!best[key] || best[key].value < profit / cost) && cost > 0 && profit > 0) {
-					/*for(let l = keys.length - 1; l > i + 1; l--) {
-						best[keys[l]] = best[keys[l - 1]];
-					}*/
-
-					best[key] = {
-						category: element.dataset.key,
-						item: el.dataset.key,
-						value, cost, profit
-					};
-
-					break;
-				}
-			}
 		});
 	});
 
@@ -490,7 +434,7 @@ const calculate = () => {
 				const profit = Number(el.querySelector('[name="profit"]').value);
 				const value = profit > 0 ? profit / Number(el.querySelector('[name="cost"]').value) : 0;
 
-				el.querySelector('.name > span').innerText = `${Math.round(value / total * 10000) / 100}%`;
+				el.querySelector('.name > span').innerText = isNaN(value) ? '0%' : `${Math.round(value / total * 10000) / 100}%`;
 			});
 		});
 
@@ -579,19 +523,6 @@ const markAsDaily = (element) => {
 	localStorage.setItem('daily', JSON.stringify(cached));
 
 	calculate();
-};
-
-const roundToFirstNumber = (number) => {
-
-	for(let i = 1; i <= number.toString().length; i++) {
-		const str = number.toString().substring(0, i);
-
-		if(!str.endsWith('.') && !str.endsWith('0')) {
-			return str;
-		}
-	}
-
-	return number.toString();
 };
 
 document.addEventListener('DOMContentLoaded', boot);
