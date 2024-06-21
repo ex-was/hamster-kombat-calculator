@@ -79,7 +79,7 @@ const config = {
 				name: 'Trading bots'
 			},
 			lzlisting: {
-				name: 'LayerZero listing'
+				name: 'LayerZero Listing'
 			}
 		}
 	},
@@ -328,6 +328,9 @@ const config = {
 			},
 			premarket: {
 				name: 'Premarket Launch'
+			},
+			tgl: {
+				name: 'TG Leaders'
 			}
 		}
 	}
