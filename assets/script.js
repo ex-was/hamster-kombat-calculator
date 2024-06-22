@@ -331,6 +331,9 @@ const config = {
 			},
 			tgl: {
 				name: 'TG Leaders'
+			},
+			yt25: {
+				name: 'YouTube 25 Million'
 			}
 		}
 	}

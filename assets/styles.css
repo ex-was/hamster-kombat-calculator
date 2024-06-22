@@ -44,6 +44,10 @@ header .subname {
     font-size: 18px;
 }
 
+header .subname > a {
+    color: #fff;
+}
+
 .results {
     position: fixed;
     bottom: 0;
