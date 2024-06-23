@@ -254,6 +254,9 @@ const config = {
 			},
 			lind: {
 				name: 'License Indonesia'
+			},
+			lvn: {
+				name: 'License Vietnam'
 			}
 		}
 	},
