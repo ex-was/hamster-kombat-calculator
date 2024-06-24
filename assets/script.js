@@ -337,6 +337,9 @@ const config = {
 			},
 			yt25: {
 				name: 'YouTube 25 Million'
+			},
+			green: {
+				name: 'Hamster Green energy'
 			}
 		}
 	}
