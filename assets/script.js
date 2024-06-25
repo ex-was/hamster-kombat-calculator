@@ -257,6 +257,9 @@ const config = {
 			},
 			lvn: {
 				name: 'License Vietnam'
+			},
+			lt: {
+				name: 'License Turkey'
 			}
 		}
 	},
