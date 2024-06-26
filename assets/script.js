@@ -346,6 +346,9 @@ const config = {
 			},
 			x10m: {
 				name: 'X Network 10 Million'
+			},
+			web3gc: {
+				name: 'Web3 Game Con'
 			}
 		}
 	}
