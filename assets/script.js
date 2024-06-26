@@ -343,6 +343,9 @@ const config = {
 			},
 			green: {
 				name: 'Hamster Green energy'
+			},
+			x10m: {
+				name: 'X Network 10 Million'
 			}
 		}
 	}
