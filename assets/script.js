@@ -1,4 +1,111 @@
 const config = {
+	pr: {
+		name: 'PR&Team',
+		items: {
+			ceo: {
+				name: 'CEO',
+				value: 0
+			},
+			marketing: {
+				name: 'Marketing',
+				value: 0
+			},
+			it: {
+				name: 'IT team',
+				value: 0
+			},
+			support: {
+				name: 'Support team',
+				value: 0
+			},
+			hb: {
+				name: 'HamsterBook',
+				value: 0
+			},
+			ht: {
+				name: 'HamsterTube',
+				value: 0
+			},
+			x: {
+				name: 'X',
+				value: 0
+			},
+			cointelegraph: {
+				name: 'Cointelegraph',
+				value: 0
+			},
+			hg: {
+				name: 'HamsterGram',
+				value: 0
+			},
+			tiktok: {
+				name: 'TikTok',
+				value: 0
+			},
+			coindesk: {
+				name: 'Coindesk',
+				value: 0
+			},
+			influencers: {
+				name: 'Influencers',
+				value: 0
+			},
+			partnership: {
+				name: 'Partnership program',
+				value: 0
+			},
+			pt: {
+				name: 'Product team',
+				value: 0
+			},
+			bigdev: {
+				name: 'BisDev team',
+				value: 0
+			},
+			f2a: {
+				name: 'Two factor authentication'
+			},
+			uxui: {
+				name: 'UX and UI team'
+			},
+			security: {
+				name: 'Security team',
+			},
+			qa: {
+				name: 'QA team'
+			},
+			shield: {
+				name: 'Antihacking shield',
+			},
+			risk: {
+				name: 'Risk management team'
+			},
+			audit: {
+				name: 'Security Audition'
+			},
+			txban: {
+				name: 'Anonymous transactions ban'
+			},
+			block: {
+				name: 'Blocking suspicious accounts'
+			},
+			tokenomics: {
+				name: 'Tokenomics expert'
+			},
+			exppass: {
+				name: 'Consensus Explorer pass'
+			},
+			vc: {
+				name: 'VS labs'
+			},
+			officer: {
+				name: 'Compliance officer'
+			},
+			wmas: {
+				name: 'Welcome to Amsterdam'
+			}
+		}
+	},
 	markets: {
 		name: 'Markets',
 		items: {
@@ -83,113 +190,6 @@ const config = {
 			}
 		}
 	},
-	pr: {
-		name: 'PR&Team',
-		items: {
-			support: {
-				name: 'Support team',
-				value: 0
-			},
-			hb: {
-				name: 'HamsterBook',
-				value: 0
-			},
-			x: {
-				name: 'X',
-				value: 0
-			},
-			cointelegraph: {
-				name: 'Cointelegraph',
-				value: 0
-			},
-			ht: {
-				name: 'HamsterTube',
-				value: 0
-			},
-			hg: {
-				name: 'HamsterGram',
-				value: 0
-			},
-			tiktok: {
-				name: 'TikTok',
-				value: 0
-			},
-			coindesk: {
-				name: 'Coindesk',
-				value: 0
-			},
-			influencers: {
-				name: 'Influencers',
-				value: 0
-			},
-			ceo: {
-				name: 'CEO',
-				value: 0
-			},
-			it: {
-				name: 'IT team',
-				value: 0
-			},
-			marketing: {
-				name: 'Marketing',
-				value: 0
-			},
-			partnership: {
-				name: 'Partnership program',
-				value: 0
-			},
-			pt: {
-				name: 'Product team',
-				value: 0
-			},
-			bigdev: {
-				name: 'BisDev team',
-				value: 0
-			},
-			f2a: {
-				name: 'Two factor authentication'
-			},
-			uxui: {
-				name: 'UX and UI team'
-			},
-			security: {
-				name: 'Security team',
-			},
-			qa: {
-				name: 'QA team'
-			},
-			shield: {
-				name: 'Antihacking shield',
-			},
-			risk: {
-				name: 'Risk management team'
-			},
-			audit: {
-				name: 'Security Audition'
-			},
-			txban: {
-				name: 'Anonymous transactions ban'
-			},
-			block: {
-				name: 'Blocking suspicious accounts'
-			},
-			tokenomics: {
-				name: 'Tokenomics expert'
-			},
-			exppass: {
-				name: 'Consensus Explorer pass'
-			},
-			vc: {
-				name: 'VS labs'
-			},
-			officer: {
-				name: 'Compliance officer'
-			},
-			wmas: {
-				name: 'Welcome to Amsterdam'
-			}
-		}
-	},
 	legal: {
 		name: 'Legal',
 		items: {
@@ -260,6 +260,9 @@ const config = {
 			},
 			lt: {
 				name: 'License Turkey'
+			},
+			lph: {
+				name: 'License Philippines'
 			}
 		}
 	},
