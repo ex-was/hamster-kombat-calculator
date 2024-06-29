@@ -352,6 +352,9 @@ const config = {
 			},
 			web3gc: {
 				name: 'Web3 Game Con'
+			},
+			records: {
+				name: 'Hamster break records'
 			}
 		}
 	}
