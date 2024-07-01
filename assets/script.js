@@ -355,6 +355,9 @@ const config = {
 			},
 			records: {
 				name: 'Hamster break records'
+			},
+			sports: {
+				name: 'Sports integration'
 			}
 		}
 	}
