@@ -103,6 +103,9 @@ const config = {
 			},
 			wmas: {
 				name: 'Welcome to Amsterdam'
+			},
+			devmumbai: {
+				name: 'Development Hub Mumbai'
 			}
 		}
 	},
