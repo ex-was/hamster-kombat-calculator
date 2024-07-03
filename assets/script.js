@@ -361,6 +361,9 @@ const config = {
 			},
 			sports: {
 				name: 'Sports integration'
+			},
+			cxi: {
+				name: 'CX Hub Istanbul'
 			}
 		}
 	}
