@@ -106,6 +106,9 @@ const config = {
 			},
 			devmumbai: {
 				name: 'Development Hub Mumbai'
+			},
+			dct: {
+				name: 'Data Center Tokyo'
 			}
 		}
 	},
