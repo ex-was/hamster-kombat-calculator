@@ -109,6 +109,9 @@ const config = {
 			},
 			dct: {
 				name: 'Data Center Tokyo'
+			},
+			lb: {
+				name: 'Leaderboards'
 			}
 		}
 	},
@@ -362,9 +365,9 @@ const config = {
 			records: {
 				name: 'Hamster break records'
 			},
-			sports: {
+			/*sports: {
 				name: 'Sports integration'
-			},
+			},*/
 			cxi: {
 				name: 'CX Hub Istanbul'
 			}
