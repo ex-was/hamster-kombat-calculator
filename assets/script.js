@@ -275,6 +275,14 @@ const config = {
 			}
 		}
 	},
+	web3: {
+		name: 'Web3',
+		items: {
+			dex: {
+				name: 'DEX'
+			}
+		}
+	},
 	specials: {
 		name: 'Specials',
 		items: {
