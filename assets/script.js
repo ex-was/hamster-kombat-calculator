@@ -280,6 +280,9 @@ const config = {
 		items: {
 			dex: {
 				name: 'DEX'
+			},
+			oracle: {
+				name: 'Oracle'
 			}
 		}
 	},
@@ -373,11 +376,14 @@ const config = {
 			records: {
 				name: 'Hamster break records'
 			},
-			/*sports: {
-				name: 'Sports integration'
-			},*/
 			cxi: {
 				name: 'CX Hub Istanbul'
+			},
+			sports: {
+				name: 'Sports integration'
+			},
+			taps: {
+				name: 'Percussion taps'
 			}
 		}
 	}
