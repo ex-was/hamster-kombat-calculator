@@ -283,6 +283,9 @@ const config = {
 			},
 			oracle: {
 				name: 'Oracle'
+			},
+			vesting: {
+				name: 'Vesting Smartcontracts'
 			}
 		}
 	},
@@ -370,18 +373,18 @@ const config = {
 			x10m: {
 				name: 'X Network 10 Million'
 			},
-			web3gc: {
+			/*web3gc: {
 				name: 'Web3 Game Con'
-			},
+			},*/
 			records: {
 				name: 'Hamster break records'
 			},
 			cxi: {
 				name: 'CX Hub Istanbul'
 			},
-			sports: {
+			/*sports: {
 				name: 'Sports integration'
-			},
+			},*/
 			taps: {
 				name: 'Percussion taps'
 			}
