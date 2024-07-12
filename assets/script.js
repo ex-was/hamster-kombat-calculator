@@ -286,6 +286,9 @@ const config = {
 			},
 			vesting: {
 				name: 'Vesting Smartcontracts'
+			},
+			lp: {
+				name: 'Launchpad'
 			}
 		}
 	},
