@@ -289,6 +289,9 @@ const config = {
 			},
 			lp: {
 				name: 'Launchpad'
+			},
+			nft: {
+				name: 'NFT Marketplace'
 			}
 		}
 	},
@@ -390,6 +393,9 @@ const config = {
 			},*/
 			taps: {
 				name: 'Percussion taps'
+			},
+			plus: {
+				name: 'Plus for CEO'
 			}
 		}
 	}
