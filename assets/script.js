@@ -388,14 +388,17 @@ const config = {
 			cxi: {
 				name: 'CX Hub Istanbul'
 			},
-			/*sports: {
-				name: 'Sports integration'
-			},*/
 			taps: {
 				name: 'Percussion taps'
 			},
 			plus: {
 				name: 'Plus for CEO'
+			},
+			sports: {
+				name: 'Sports integration'
+			},
+			jet: {
+				name: 'Business jet'
 			}
 		}
 	}
