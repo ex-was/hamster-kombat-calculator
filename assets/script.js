@@ -399,6 +399,9 @@ const config = {
 			},
 			jet: {
 				name: 'Business jet'
+			},
+			btcr: {
+				name: 'Call for BTC to rise'
 			}
 		}
 	}
