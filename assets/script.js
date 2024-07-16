@@ -391,17 +391,20 @@ const config = {
 			taps: {
 				name: 'Percussion taps'
 			},
-			plus: {
-				name: 'Plus for CEO'
-			},
-			sports: {
+			/*sports: {
 				name: 'Sports integration'
-			},
+			},*/
 			jet: {
 				name: 'Business jet'
 			},
 			btcr: {
 				name: 'Call for BTC to rise'
+			},
+			plus: {
+				name: 'Plus for CEO'
+			},
+			rolex: {
+				name: 'Rolex for soulmate'
 			}
 		}
 	}
