@@ -400,11 +400,14 @@ const config = {
 			btcr: {
 				name: 'Call for BTC to rise'
 			},
-			plus: {
+			/*plus: {
 				name: 'Plus for CEO'
-			},
+			},*/
 			rolex: {
 				name: 'Rolex for soulmate'
+			},
+			appstore: {
+				name: 'Apple Appstore launch'
 			}
 		}
 	}
