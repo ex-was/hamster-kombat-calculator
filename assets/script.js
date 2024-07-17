@@ -2,413 +2,137 @@ const config = {
 	pr: {
 		name: 'PR&Team',
 		items: {
-			ceo: {
-				name: 'CEO',
-				value: 0
-			},
-			marketing: {
-				name: 'Marketing',
-				value: 0
-			},
-			it: {
-				name: 'IT team',
-				value: 0
-			},
-			support: {
-				name: 'Support team',
-				value: 0
-			},
-			hb: {
-				name: 'HamsterBook',
-				value: 0
-			},
-			ht: {
-				name: 'HamsterTube',
-				value: 0
-			},
-			x: {
-				name: 'X',
-				value: 0
-			},
-			cointelegraph: {
-				name: 'Cointelegraph',
-				value: 0
-			},
-			hg: {
-				name: 'HamsterGram',
-				value: 0
-			},
-			tiktok: {
-				name: 'TikTok',
-				value: 0
-			},
-			coindesk: {
-				name: 'Coindesk',
-				value: 0
-			},
-			influencers: {
-				name: 'Influencers',
-				value: 0
-			},
-			partnership: {
-				name: 'Partnership program',
-				value: 0
-			},
-			pt: {
-				name: 'Product team',
-				value: 0
-			},
-			bigdev: {
-				name: 'BisDev team',
-				value: 0
-			},
-			f2a: {
-				name: 'Two factor authentication'
-			},
-			uxui: {
-				name: 'UX and UI team'
-			},
-			security: {
-				name: 'Security team',
-			},
-			qa: {
-				name: 'QA team'
-			},
-			shield: {
-				name: 'Antihacking shield',
-			},
-			risk: {
-				name: 'Risk management team'
-			},
-			audit: {
-				name: 'Security Audition'
-			},
-			txban: {
-				name: 'Anonymous transactions ban'
-			},
-			block: {
-				name: 'Blocking suspicious accounts'
-			},
-			tokenomics: {
-				name: 'Tokenomics expert'
-			},
-			exppass: {
-				name: 'Consensus Explorer pass'
-			},
-			vc: {
-				name: 'VS labs'
-			},
-			officer: {
-				name: 'Compliance officer'
-			},
-			wmas: {
-				name: 'Welcome to Amsterdam'
-			},
-			devmumbai: {
-				name: 'Development Hub Mumbai'
-			},
-			dct: {
-				name: 'Data Center Tokyo'
-			},
-			lb: {
-				name: 'Leaderboards'
-			}
+			ceo: { name: 'CEO', value: 0 },
+			marketing: { name: 'Marketing', value: 0 },
+			it: { name: 'IT team', value: 0 },
+			support: { name: 'Support team', value: 0 },
+			hb: { name: 'HamsterBook', value: 0 },
+			ht: { name: 'HamsterTube', value: 0 },
+			x: { name: 'X', value: 0 },
+			cointelegraph: { name: 'Cointelegraph', value: 0 },
+			hg: { name: 'HamsterGram', value: 0 },
+			tiktok: { name: 'TikTok', value: 0 },
+			coindesk: { name: 'Coindesk', value: 0 },
+			influencers: { name: 'Influencers', value: 0 },
+			partnership: { name: 'Partnership program', value: 0 },
+			pt: { name: 'Product team', value: 0 },
+			bigdev: { name: 'BisDev team', value: 0 },
+			f2a: { name: 'Two factor authentication' },
+			uxui: { name: 'UX and UI team' },
+			security: { name: 'Security team' },
+			qa: { name: 'QA team' },
+			shield: { name: 'Antihacking shield' },
+			risk: { name: 'Risk management team' },
+			audit: { name: 'Security Audition' },
+			txban: { name: 'Anonymous transactions ban' },
+			block: { name: 'Blocking suspicious accounts' },
+			tokenomics: { name: 'Tokenomics expert' },
+			exppass: { name: 'Consensus Explorer pass' },
+			vc: { name: 'VS labs' },
+			officer: { name: 'Compliance officer' },
+			wmas: { name: 'Welcome to Amsterdam' },
+			devmumbai: { name: 'Development Hub Mumbai' },
+			dct: { name: 'Data Center Tokyo' },
+			lb: { name: 'Leaderboards' }
 		}
 	},
 	markets: {
 		name: 'Markets',
 		items: {
-			fan: {
-				name: 'Fan tokens',
-				value: 0
-			},
-			staking: {
-				name: 'Staking',
-				value: 0
-			},
-			btc: {
-				name: 'BTC Pairs',
-				value: 0
-			},
-			eth: {
-				name: 'ETH Pairs',
-				value: 0
-			},
-			cmc: {
-				name: 'Top 10 cmc pairs',
-				value: 0
-			},
-			gamefi: {
-				name: 'GameFi tokens',
-				value: 0
-			},
-			defi20: {
-				name: 'Defi2.0 tokens',
-				value: 0
-			},
-			socialfi: {
-				name: 'SocialFi tokens',
-				value: 0
-			},
-			meme: {
-				name: 'Meme coins',
-				value: 0
-			},
-			shit: {
-				name: 'Shit coins',
-				value: 0
-			},
-			x10: {
-				name: 'Margin trading x10'
-			},
-			x20: {
-				name: 'Margin trading x20'
-			},
-			x30: {
-				name: 'Margin trading x30'
-			},
-			x50: {
-				name: 'Margin trading x50'
-			},
-			x75: {
-				name: 'Margin trading x75'
-			},
-			x100: {
-				name: 'Margin trading x100'
-			},
-			derivatives: {
-				name: 'Derivatives'
-			},
-			pmarkets: {
-				name: 'Prediction markets'
-			},
-			web3: {
-				name: 'Web3 integration'
-			},
-			dao: {
-				name: 'DAO'
-			},
-			p2p: {
-				name: 'P2P trading'
-			},
-			bots: {
-				name: 'Trading bots'
-			},
-			lzlisting: {
-				name: 'LayerZero Listing'
-			}
+			fan: { name: 'Fan tokens', value: 0 },
+			staking: { name: 'Staking', value: 0 },
+			btc: { name: 'BTC Pairs', value: 0 },
+			eth: { name: 'ETH Pairs', value: 0 },
+			cmc: { name: 'Top 10 cmc pairs', value: 0 },
+			gamefi: { name: 'GameFi tokens', value: 0 },
+			defi20: { name: 'Defi2.0 tokens', value: 0 },
+			socialfi: { name: 'SocialFi tokens', value: 0 },
+			meme: { name: 'Meme coins', value: 0 },
+			shit: { name: 'Shit coins', value: 0 },
+			x10: { name: 'Margin trading x10' },
+			x20: { name: 'Margin trading x20' },
+			x30: { name: 'Margin trading x30' },
+			x50: { name: 'Margin trading x50' },
+			x75: { name: 'Margin trading x75' },
+			x100: { name: 'Margin trading x100' },
+			derivatives: { name: 'Derivatives' },
+			pmarkets: { name: 'Prediction markets' },
+			web3: { name: 'Web3 integration' },
+			dao: { name: 'DAO' },
+			p2p: { name: 'P2P trading' },
+			bots: { name: 'Trading bots' },
+			lzlisting: { name: 'LayerZero Listing' }
 		}
 	},
 	legal: {
 		name: 'Legal',
 		items: {
-			kyc: {
-				name: 'KYC',
-				value: 0
-			},
-			kyb: {
-				name: 'KYB',
-				value: 0
-			},
-			legal: {
-				name: 'Legal opinion',
-				value: 0
-			},
-			sec: {
-				name: 'SEC transparency',
-				value: 0
-			},
-			aml: {
-				name: 'Anti money loundering',
-				value: 0
-			},
-			luae: {
-				name: 'License UAE',
-				value: 0
-			},
-			leu: {
-				name: 'License Europe',
-				value: 0
-			},
-			lasia: {
-				name: 'License Asia',
-				value: 0
-			},
-			lsa: {
-				name: 'License South America',
-				value: 0
-			},
-			lau: {
-				name: 'License Australia',
-				value: 0
-			},
-			lna: {
-				name: 'License North America',
-				value: 0
-			},
-			ln: {
-				name: 'License Nigeria'
-			},
-			ljp: {
-				name: 'License Japan'
-			},
-			leth: {
-				name: 'License Ethiopia'
-			},
-			lindia: {
-				name: 'License India'
-			},
-			lbangladesh: {
-				name: 'License Bangladesh'
-			},
-			lind: {
-				name: 'License Indonesia'
-			},
-			lvn: {
-				name: 'License Vietnam'
-			},
-			lt: {
-				name: 'License Turkey'
-			},
-			lph: {
-				name: 'License Philippines'
-			}
+			kyc: { name: 'KYC', value: 0 },
+			kyb: { name: 'KYB', value: 0 },
+			legal: { name: 'Legal opinion', value: 0 },
+			sec: { name: 'SEC transparency', value: 0 },
+			aml: { name: 'Anti money loundering', value: 0 },
+			luae: { name: 'License UAE', value: 0 },
+			leu: { name: 'License Europe', value: 0 },
+			lasia: { name: 'License Asia', value: 0 },
+			lsa: { name: 'License South America', value: 0 },
+			lau: { name: 'License Australia', value: 0 },
+			lna: { name: 'License North America', value: 0 },
+			ln: { name: 'License Nigeria' },
+			ljp: { name: 'License Japan' },
+			leth: { name: 'License Ethiopia' },
+			lindia: { name: 'License India' },
+			lbangladesh: { name: 'License Bangladesh' },
+			lind: { name: 'License Indonesia' },
+			lvn: { name: 'License Vietnam' },
+			lt: { name: 'License Turkey' },
+			lph: { name: 'License Philippines' }
 		}
 	},
 	web3: {
 		name: 'Web3',
 		items: {
-			dex: {
-				name: 'DEX'
-			},
-			oracle: {
-				name: 'Oracle'
-			},
-			vesting: {
-				name: 'Vesting Smartcontracts'
-			},
-			lp: {
-				name: 'Launchpad'
-			},
-			nft: {
-				name: 'NFT Marketplace'
-			}
+			dex: { name: 'DEX' },
+			oracle: { name: 'Oracle' },
+			vesting: { name: 'Vesting Smartcontracts' },
+			lp: { name: 'Launchpad' },
+			nft: { name: 'NFT Marketplace' }
 		}
 	},
 	specials: {
 		name: 'Specials',
 		items: {
-			tonusdt: {
-				name: 'USDT on TON'
-			},
-			bogdanoff: {
-				name: 'Bogdanoff is calling'
-			},
-			appscl: {
-				name: 'Apps Center Listing'
-			},
-			villa: {
-				name: 'Villa for the DEV team'
-			},
-			long: {
-				name: 'Long squeeze'
-			},
-			short: {
-				name: 'Short squeeze',
-			},
-			adc: {
-				name: 'Ad contract with football club'
-			},
-			conference: {
-				name: 'Special Hamster Conference'
-			},
-			twochairs: {
-				name: 'There are two chairs...'
-			},
-			/*venom: {
-				name: 'Venom Blockchain',
-			},*/
-			top10: {
-				name: 'Top 10 Global Ranking'
-			},
-			nftl: {
-				name: 'NFT Collection Launch'
-			},
-			tonham: {
-				name: 'TON + Hamster Kombat = Success'
-			},
-			piranha: {
-				name: 'Consensus Piranha Pass'
-			},
-			web3a: {
-				name: 'Web3 academy launch'
-			},
-			ytbutton: {
-				name: 'YouTube Gold Button'
-			},
-			ytchannel: {
-				name: 'Hamster YouTube Channel'
-			},
-			/*dshow: {
-				name: 'Hamster daily show'
-			},*/
-			/*ceosgz: {
-				name: '21.000.000 CEOs'
-			},*/
-			pizza: {
-				name: 'Bitcoin Pizza Day'
-			},
-			/*ai: {
-				name: 'Hamster AI'
-			}*/
-			merch: {
-				name: 'Hamster Kombat Merch'
-			},
-			premarket: {
-				name: 'Premarket Launch'
-			},
-			tgl: {
-				name: 'TG Leaders'
-			},
-			yt25: {
-				name: 'YouTube 25 Million'
-			},
-			green: {
-				name: 'Hamster Green energy'
-			},
-			x10m: {
-				name: 'X Network 10 Million'
-			},
-			/*web3gc: {
-				name: 'Web3 Game Con'
-			},*/
-			records: {
-				name: 'Hamster break records'
-			},
-			cxi: {
-				name: 'CX Hub Istanbul'
-			},
-			taps: {
-				name: 'Percussion taps'
-			},
-			/*sports: {
-				name: 'Sports integration'
-			},*/
-			jet: {
-				name: 'Business jet'
-			},
-			btcr: {
-				name: 'Call for BTC to rise'
-			},
-			/*plus: {
-				name: 'Plus for CEO'
-			},*/
-			rolex: {
-				name: 'Rolex for soulmate'
-			},
-			appstore: {
-				name: 'Apple Appstore launch'
-			}
+			fight: { name: 'Fight fight fight' },
+			appstore: { name: 'Apple Appstore launch' },
+			rolex: { name: 'Rolex for soulmate' },
+			btcr: { name: 'Call for BTC to rise' },
+			jet: { name: 'Business jet' },
+			taps: { name: 'Percussion taps' },
+			cxi: { name: 'CX Hub Istanbul' },
+			records: { name: 'Hamster break records' },
+			x10m: { name: 'X Network 10 Million' },
+			green: { name: 'Hamster Green energy' },
+			yt25: { name: 'YouTube 25 Million' },
+			tgl: { name: 'TG Leaders' },
+			premarket: { name: 'Premarket Launch' },
+			merch: { name: 'Hamster Kombat Merch' },
+			pizza: { name: 'Bitcoin Pizza Day' },
+			ytchannel: { name: 'Hamster YouTube Channel' },
+			ytbutton: { name: 'YouTube Gold Button' },
+			web3a: { name: 'Web3 academy launch' },
+			piranha: { name: 'Consensus Piranha Pass' },
+			tonham: { name: 'TON + Hamster Kombat = Success' },
+			nftl: { name: 'NFT Collection Launch' },
+			top10: { name: 'Top 10 Global Ranking' },
+			twochairs: { name: 'There are two chairs...' },
+			conference: { name: 'Special Hamster Conference' },
+			adc: { name: 'Ad contract with football club' },
+			short: { name: 'Short squeeze' },
+			long: { name: 'Long squeeze' },
+			villa: { name: 'Villa for the DEV team' },
+			appscl: { name: 'Apps Center Listing' },
+			bogdanoff: { name: 'Bogdanoff is calling' },
+			tonusdt: { name: 'USDT on TON' }
 		}
 	}
 };
