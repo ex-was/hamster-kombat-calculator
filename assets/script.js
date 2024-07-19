@@ -102,6 +102,7 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			analytics: { name: 'Hamster Analytics' },
 			celebrate: { name: '50m Telegram channel' },
 			fight: { name: 'Fight fight fight' },
 			appstore: { name: 'Apple Appstore launch' },
