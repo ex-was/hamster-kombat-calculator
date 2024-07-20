@@ -102,10 +102,11 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			au: { name: 'Strategic session in Australia' },
 			analytics: { name: 'Hamster Analytics' },
 			celebrate: { name: '50m Telegram channel' },
 			fight: { name: 'Fight fight fight' },
-			appstore: { name: 'Apple Appstore launch' },
+			appstore: { name: 'HamsterStore launch' },
 			rolex: { name: 'Rolex for soulmate' },
 			btcr: { name: 'Call for BTC to rise' },
 			jet: { name: 'Business jet' },
