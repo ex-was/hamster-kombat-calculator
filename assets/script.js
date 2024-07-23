@@ -33,7 +33,8 @@ const config = {
 			wmas: { name: 'Welcome to Amsterdam' },
 			devmumbai: { name: 'Development Hub Mumbai' },
 			dct: { name: 'Data Center Tokyo' },
-			lb: { name: 'Leaderboards' }
+			lb: { name: 'Leaderboards' },
+			minigame: { name: 'Minigame' }
 		}
 	},
 	markets: {
