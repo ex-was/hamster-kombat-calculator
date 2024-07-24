@@ -103,6 +103,7 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			kamala: { name: 'Kamala is calling' },
 			miniapp: { name: 'Telegram Miniapp Launch' },
 			//au: { name: 'Strategic session in Australia' },
 			analytics: { name: 'Hamster Analytics' },
