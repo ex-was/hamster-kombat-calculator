@@ -105,8 +105,8 @@ const config = {
 		items: {
 			btc: { name: 'Bitcoin Conference 2024' },
 			kamala: { name: 'Kamala is calling' },
-			miniapp: { name: 'Telegram Miniapp Launch' },
 			stats: { name: 'Telegram Stats integration' },
+			miniapp: { name: 'Telegram Miniapp Launch' },
 			//au: { name: 'Strategic session in Australia' },
 			analytics: { name: 'Hamster Analytics' },
 			celebrate: { name: '50m Telegram channel' },
