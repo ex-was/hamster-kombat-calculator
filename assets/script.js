@@ -103,8 +103,10 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			btc: { name: 'Bitcoin Conference 2024' },
 			kamala: { name: 'Kamala is calling' },
 			miniapp: { name: 'Telegram Miniapp Launch' },
+			stats: { name: 'Telegram Stats integration' },
 			//au: { name: 'Strategic session in Australia' },
 			analytics: { name: 'Hamster Analytics' },
 			celebrate: { name: '50m Telegram channel' },
