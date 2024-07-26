@@ -103,6 +103,7 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			water: { name: 'Hamsters tested the purity of the water' },
 			btc: { name: 'Bitcoin Conference 2024' },
 			kamala: { name: 'Kamala is calling' },
 			stats: { name: 'Telegram Stats integration' },
