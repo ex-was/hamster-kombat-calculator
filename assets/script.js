@@ -104,8 +104,10 @@ const config = {
 		name: 'Specials',
 		items: {
 			water: { name: 'Hamsters tested the purity of the water' },
+			hot: { name: 'Carry it like it`s hot' },
 			btc: { name: 'Bitcoin Conference 2024' },
 			kamala: { name: 'Kamala is calling' },
+			bank: { name: 'HamsterBank' },
 			stats: { name: 'Telegram Stats integration' },
 			miniapp: { name: 'Telegram Miniapp Launch' },
 			//au: { name: 'Strategic session in Australia' },
