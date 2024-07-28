@@ -97,13 +97,14 @@ const config = {
 			oracle: { name: 'Oracle' },
 			vesting: { name: 'Vesting Smartcontracts' },
 			lp: { name: 'Launchpad' },
-			nft: { name: 'NFT Marketplace' }
+			nft: { name: 'NFT Marketplace' },
+			grant: { name: 'Grant for Developers' }
 		}
 	},
 	specials: {
 		name: 'Specials',
 		items: {
-			water: { name: 'Hamsters tested the purity of the water' },
+			//water: { name: 'Hamsters tested the purity of the water' },
 			hot: { name: 'Carry it like it`s hot' },
 			btc: { name: 'Bitcoin Conference 2024' },
 			kamala: { name: 'Kamala is calling' },
