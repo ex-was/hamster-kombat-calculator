@@ -98,7 +98,8 @@ const config = {
 			vesting: { name: 'Vesting Smartcontracts' },
 			lp: { name: 'Launchpad' },
 			nft: { name: 'NFT Marketplace' },
-			grant: { name: 'Grant for Developers' }
+			grant: { name: 'Grant for Developers' },
+			metaverse: { name: 'NFT Metaverse' }
 		}
 	},
 	specials: {
