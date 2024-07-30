@@ -99,12 +99,14 @@ const config = {
 			lp: { name: 'Launchpad' },
 			nft: { name: 'NFT Marketplace' },
 			grant: { name: 'Grant for Developers' },
-			metaverse: { name: 'NFT Metaverse' }
+			metaverse: { name: 'NFT Metaverse' },
+			farm: { name: 'Crypto Farming' }
 		}
 	},
 	specials: {
 		name: 'Specials',
 		items: {
+			bdayeth: { name: 'Ethereum birthday' },
 			//water: { name: 'Hamsters tested the purity of the water' },
 			hot: { name: 'Carry it like it`s hot' },
 			btc: { name: 'Bitcoin Conference 2024' },
