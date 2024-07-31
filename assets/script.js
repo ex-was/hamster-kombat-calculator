@@ -100,12 +100,14 @@ const config = {
 			nft: { name: 'NFT Marketplace' },
 			grant: { name: 'Grant for Developers' },
 			metaverse: { name: 'NFT Metaverse' },
-			farm: { name: 'Crypto Farming' }
+			farm: { name: 'Crypto Farming' },
+			sport: { name: 'Sport Collectibles Marketplace' }
 		}
 	},
 	specials: {
 		name: 'Specials',
 		items: {
+			fin: { name: 'This is fine' },
 			bdayeth: { name: 'Ethereum birthday' },
 			//water: { name: 'Hamsters tested the purity of the water' },
 			hot: { name: 'Carry it like it`s hot' },
