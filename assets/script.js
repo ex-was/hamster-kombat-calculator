@@ -101,7 +101,8 @@ const config = {
 			grant: { name: 'Grant for Developers' },
 			metaverse: { name: 'NFT Metaverse' },
 			farm: { name: 'Crypto Farming' },
-			sport: { name: 'Sport Collectibles Marketplace' }
+			sport: { name: 'Sport Collectibles Marketplace' },
+			market: { name: 'Market Making' }
 		}
 	},
 	specials: {
