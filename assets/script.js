@@ -102,18 +102,19 @@ const config = {
 			metaverse: { name: 'NFT Metaverse' },
 			farm: { name: 'Crypto Farming' },
 			sport: { name: 'Sport Collectibles Marketplace' },
-			market: { name: 'Market Making' }
+			market: { name: 'Market Making' },
+			adv: { name: 'Web3 Advertising Platform' }
 		}
 	},
 	specials: {
 		name: 'Specials',
 		items: {
-			fin: { name: 'This is fine' },
+			//fin: { name: 'This is fine' },
 			bdayeth: { name: 'Ethereum birthday' },
 			//water: { name: 'Hamsters tested the purity of the water' },
 			hot: { name: 'Carry it like it`s hot' },
-			btc: { name: 'Bitcoin Conference 2024' },
-			kamala: { name: 'Kamala is calling' },
+			//btc: { name: 'Bitcoin Conference 2024' },
+			//kamala: { name: 'Kamala is calling' },
 			bank: { name: 'HamsterBank' },
 			stats: { name: 'Telegram Stats integration' },
 			miniapp: { name: 'Telegram Miniapp Launch' },
