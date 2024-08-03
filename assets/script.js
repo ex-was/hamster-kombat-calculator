@@ -109,6 +109,8 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			paris: { name: 'Games in Paris' },
+			gpt: { name: 'HamsterGPT' },
 			//fin: { name: 'This is fine' },
 			bdayeth: { name: 'Ethereum birthday' },
 			//water: { name: 'Hamsters tested the purity of the water' },
