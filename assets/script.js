@@ -110,6 +110,7 @@ const config = {
 		name: 'Specials',
 		items: {
 			paris: { name: 'Games in Paris' },
+			sleeping: { name: 'Sleeping hamster' },
 			gpt: { name: 'HamsterGPT' },
 			//fin: { name: 'This is fine' },
 			bdayeth: { name: 'Ethereum birthday' },
