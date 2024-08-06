@@ -109,11 +109,12 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
-			paris: { name: 'Games in Paris' },
+			//paris: { name: 'Games in Paris' },
+			health: { name: 'Healthy nutrition hamster' },
 			sleeping: { name: 'Sleeping hamster' },
 			gpt: { name: 'HamsterGPT' },
 			//fin: { name: 'This is fine' },
-			bdayeth: { name: 'Ethereum birthday' },
+			//bdayeth: { name: 'Ethereum birthday' },
 			//water: { name: 'Hamsters tested the purity of the water' },
 			hot: { name: 'Carry it like it`s hot' },
 			//btc: { name: 'Bitcoin Conference 2024' },
