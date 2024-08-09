@@ -109,6 +109,9 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			university: { name: 'University hamster' },
+			tonbin: { name: 'Ton Listing on Binance' },
+			gym: { name: 'Gym hamster' },
 			//paris: { name: 'Games in Paris' },
 			health: { name: 'Healthy nutrition hamster' },
 			sleeping: { name: 'Sleeping hamster' },
