@@ -109,6 +109,9 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
+			finals: { name: 'Finals are approaching' },
+			whales: { name: 'Hamster helps whales' },
+			vipassana: { name: 'Vipassana hamster' },
 			university: { name: 'University hamster' },
 			tonbin: { name: 'Ton Listing on Binance' },
 			gym: { name: 'Gym hamster' },
@@ -119,7 +122,7 @@ const config = {
 			//fin: { name: 'This is fine' },
 			//bdayeth: { name: 'Ethereum birthday' },
 			//water: { name: 'Hamsters tested the purity of the water' },
-			hot: { name: 'Carry it like it`s hot' },
+			//hot: { name: 'Carry it like it`s hot' },
 			//btc: { name: 'Bitcoin Conference 2024' },
 			//kamala: { name: 'Kamala is calling' },
 			bank: { name: 'HamsterBank' },
