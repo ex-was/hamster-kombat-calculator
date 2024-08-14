@@ -109,7 +109,9 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
-			finals: { name: 'Finals are approaching' },
+			hbday: { name: '11 years Telegram' },
+			friends: { name: 'Hamster with friends' },
+			//finals: { name: 'Finals are approaching' },
 			whales: { name: 'Hamster helps whales' },
 			vipassana: { name: 'Vipassana hamster' },
 			university: { name: 'University hamster' },
