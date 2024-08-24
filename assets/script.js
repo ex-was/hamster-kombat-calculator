@@ -109,7 +109,12 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
-			hbday: { name: '11 years Telegram' },
+			card: { name: 'Crypto.com Metal Card' },
+			car: { name: 'Electric car production' },
+			tv: { name: 'Speaking on a TV show' },
+			dev: { name: 'Company development planning' },
+			com: { name: 'Communication with a mentor' },
+			//hbday: { name: '11 years Telegram' },
 			friends: { name: 'Hamster with friends' },
 			//finals: { name: 'Finals are approaching' },
 			whales: { name: 'Hamster helps whales' },
@@ -157,7 +162,7 @@ const config = {
 			top10: { name: 'Top 10 Global Ranking' },
 			twochairs: { name: 'There are two chairs...' },
 			conference: { name: 'Special Hamster Conference' },
-			adc: { name: 'Ad contract with football club' },
+			//adc: { name: 'Ad contract with football club' },
 			short: { name: 'Short squeeze' },
 			long: { name: 'Long squeeze' },
 			villa: { name: 'Villa for the DEV team' },
