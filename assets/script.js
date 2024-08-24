@@ -112,6 +112,7 @@ const config = {
 			card: { name: 'Crypto.com Metal Card' },
 			car: { name: 'Electric car production' },
 			tv: { name: 'Speaking on a TV show' },
+			negotiations: { name: 'Negotiations with partners' },
 			dev: { name: 'Company development planning' },
 			com: { name: 'Communication with a mentor' },
 			//hbday: { name: '11 years Telegram' },
