@@ -109,7 +109,10 @@ const config = {
 	specials: {
 		name: 'Specials',
 		items: {
-			card: { name: 'Crypto.com Metal Card' },
+			card: { name: 'MoonPay' },
+			farming: { name: 'Investments in farming' },
+			cars: { name: 'Collection of vintage cars' },
+			rocket: { name: 'Launching a rocket to Mars' },
 			car: { name: 'Electric car production' },
 			tv: { name: 'Speaking on a TV show' },
 			negotiations: { name: 'Negotiations with partners' },
