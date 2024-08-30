@@ -110,6 +110,9 @@ const config = {
 		name: 'Specials',
 		items: {
 			card: { name: 'MoonPay' },
+			hiring: { name: 'Hiring employees' },
+			setting: { name: 'Setting up business processes' },
+			speak: { name: 'Speaking to employees' },
 			farming: { name: 'Investments in farming' },
 			cars: { name: 'Collection of vintage cars' },
 			rocket: { name: 'Launching a rocket to Mars' },
